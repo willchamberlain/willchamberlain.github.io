@@ -17,11 +17,35 @@
  * Returns a random integer between min (inclusive) and max (inclusive)
  * Using Math.round() will give you a non-uniform distribution!
  */
+ /**
+ https://stackoverflow.com/questions/1527803/generating-random-whole-numbers-in-javascript-in-a-specific-range
+ Here's the logic behind it. It's a simple rule of three:
+ */
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+function decide(some_int_)
+	switch(some_int_) {
+	    case 1:
+	    case 2:
+	    case 3:
+	        return "Robot rendezvous in VREP - 25 mins - "+some_int_
+	        break;
+	    case 4:
+	        return "Thesis - old papers - 25 mins - "+some_int_
+	        break;
+	    case 5:
+	        return "Thesis - camera extrinsics calibration - 25 mins - "+some_int_
+	        break;
+	    case 6:
+	        return "Thesis - plan and review what the insight and contribution is - 15 mins - "+some_int_
+	        break;
+	    default:
+	        code block
+	}
+} 
 function myFunction() {
-    document.getElementById("demo").innerHTML = getRandomInt(1,5);
+    document.getElementById("demo").innerHTML = decide(getRandomInt(1,6));
 }
 </script>
 </body>
