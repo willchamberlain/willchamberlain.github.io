@@ -24,7 +24,8 @@
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-function decide(some_int_)
+
+function decide(some_int_) {
 	switch(some_int_) {
 	    case 1:
 	    case 2:
@@ -44,6 +45,7 @@ function decide(some_int_)
 	        return "Value not recognised: "+some_int_
 	}
 } 
+
 function myFunction() {
     document.getElementById("demo").innerHTML = decide(getRandomInt(1,6));
 }
