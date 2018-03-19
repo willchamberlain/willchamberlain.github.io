@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>ROS - TF - static - William Chamberlain</title>
+<meta name="author" content="William Chamberlain" />
+</head>
+<body id="">
+<h1>ROS TF static</h1>	
+<div>
+	<h2>Summary</h2>	
+	<p>
+		Fixed, unchanging transforms between a pair of frames. e.g. between the base_link of a Pioneer3DX robot and its chassis top plate, or between a security camera on a fixed bracket and the wall it is fixed to.
+	</p>
+	<p>
+		
+	</p>
+	<p>
+		Parameters can be added to a script outside a simulation by double-clicking on the bar-chart icon of the script.
+	</p>
+	<p> 
+		Parameters can be added to a script during a simulation programmatically - this is a form of data exchange between scripts, or to/from remote API.
+	</p>
+
+</div>
+
+<div>
+	<h2>API</h2>
+	<p>
+		<a href="http://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetScriptSimulationParameter.htm">API : sim<b>Get</b>ScriptSimulationParameter</a>( [handle of object that owns the parameter] , [parameter name string] )
+	</p>
+	<p>
+		<a href="http://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetScriptSimulationParameter.htm">API : sim<b>Set</b>ScriptSimulationParameter</a>( [handle of object that owns the parameter] , [parameter name string] , value )
+	</p>
+	<p>
+		(all parameters are treated as strings, but can be converted to number later on. Strings may contain any values (also embedded zeros))  :  see the <a href="http://www.coppeliarobotics.com/helpFiles/en/apiFunctionListCategory.htm#packing">data packing/unpacking functions</a>.
+	</p>
+</div>
+
+<div>
+	<h2>Usage</h2>
+	<div>
+		<h3>Command line</h3>
+		<div>
+			<h4>roll-pitch-yaw</h4>
+			<p>
+				<code>rosrun tf static_transform_publisher x y z  <b>yaw</b> pitch <i>roll</i> [from frame] [to frame] [Hz]</code> ( m, rads )
+				e.g.
+				<br/>
+				<code>rosrun tf static_transform_publisher  1.0 2.0 1.5  1.57 0.0 0.0  map Pioneer_p3dx 100</code>
+			</p>
+		</div>
+		<div>
+			<h4>quaternion</h4>
+				<p>
+				<code>rosrun tf static_transform_publisher x y z  qx qy qz qw [from frame] [to frame] 100</code>
+				e.g.
+				<br/>
+				<code>rosrun tf static_transform_publisher 0.0 0.0 0.0 0.0 0.0 0.1 map Pioneer_p3dx 100</code>
+			</p>
+		</div>
+	</div>
+</div>
+</body>
+</html>
